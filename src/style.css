@@ -1,0 +1,144 @@
+body {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  row-gap: 30px;
+  justify-content: space-evenly;
+}
+
+#pokemon {
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  color: black;
+  margin: 0 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin-bottom: 25px;
+  width: 200px;
+  font-size: 25px;
+  height: 50px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 2px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background-color: darkgrey;
+}
+
+button:active {
+  top: 1px;
+  left: 1px;
+}
+
+#image {
+  width: 100%;
+}
+
+.grass {
+  background-color: #8dd694;
+  border-color: #5dad65;
+}
+
+.water {
+  background-color: #8dc6e6;
+  border-color: #6f9eca;
+}
+
+.fire {
+  background-color: #e69d8d;
+  border-color: #c67d6d;
+}
+
+.rock {
+  background-color: #b99d72;
+  border-color: #957d59;
+}
+
+.ground {
+  background-color: #efbe85;
+  border-color: #d0a068;
+}
+
+.psychic {
+  background-color: #d053bc;
+  border-color: #a44094;
+}
+
+.poison {
+  background-color: #a55db1;
+  border-color: #8a4a95;
+}
+
+.electric {
+  background-color: #e7c859;
+  border-color: #d0b34a;
+}
+
+.fairy {
+  background-color: #eea1e2;
+  border-color: #c77fbc;
+}
+
+.bug {
+  background-color: #bddd7a;
+  border-color: #a2c170;
+}
+
+.normal {
+  background-color: #c9adec;
+  border-color: #a485cc;
+}
+
+.ghost {
+  background-color: #835e94;
+  border-color: #6b4c79;
+}
+
+.dark {
+  background-color: #686868;
+  border-color: #434343;
+}
+
+.steel {
+  background-color: #598fa3;
+  border-color: #517c8b;
+}
+
+.fighting {
+  background-color: #e07f60;
+  border-color: #b1664f;
+}
+
+.dragon {
+  background-color: #8859d5;
+  border-color: #724cae;
+}
+
+.ice {
+  background-color: #71d8de;
+  border-color: #65c1c6;
+}

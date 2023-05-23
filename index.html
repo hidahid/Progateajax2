@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan AJAX 2</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <h1>Get Pokemons</h1>
+
+    <button type="button" id="button" onclick="fetchData()">Get !</button>
+
+    <div id="container"></div>
+  </body>
+  <script>
+    async function fetchData() {
+      const response = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?limit=1000",
+        {
+          method: "GET",
+        }
+      );
+
+      const container = document.getElementById("container");
+      const json = await response.json();
+      const results = json.results;
+
+      let pokemons = [];
+
+      for (i = 0; i < results.length; i++) {
+        const detail = await fetch(results[i].url, {
+          method: "GET",
+        });
+        const detailJson = await detail.json();
+
+        pokemons.push({
+          id: detailJson.id,
+          name: detailJson.name,
+          image: detailJson.sprites.front_default,
+          type: detailJson.types[0].type.name,
+        });
+
+        const cards = document.createElement("div");
+        cards.id = "pokemon";
+        cards.classList.add(pokemons[i].type);
+        container.appendChild(cards);
+
+        const title = document.createElement("div");
+        title.classList.add("title");
+        cards.appendChild(title);
+
+        const number = document.createElement("p");
+        number.id = "number";
+        number.innerHTML = pokemons[i].id;
+        title.appendChild(number);
+
+        const name = document.createElement("p");
+        name.id = "name";
+        name.innerHTML = `: ${pokemons[i].name}`;
+        title.appendChild(name);
+
+        const image = document.createElement("img");
+        image.id = "image";
+        image.src = pokemons[i].image;
+        image.alt = pokemons[i].name;
+        cards.appendChild(image);
+
+        const type = document.createElement("p");
+        type.id = "type";
+        type.innerHTML = `Type: ${pokemons[i].type}`;
+        cards.appendChild(type);
+      }
+    }
+  </script>
+</html>
